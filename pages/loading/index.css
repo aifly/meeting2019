@@ -37,12 +37,12 @@
   margin: 200px auto 0; }
 
 .zmiti-loading-ui {
-  width: 700px;
+  width: 420px;
   height: 300px;
   position: absolute;
   left: 50%;
   top: 50%;
-  margin: 0px 0 0 -350px; }
+  margin: 0px 0 0 -210px; }
   .zmiti-loading-ui.loading-enter-active, .zmiti-loading-ui.loading-leave-active {
     -webkit-transition: 0.4s 0.2s;
     transition: 0.4s 0.2s; }
@@ -57,14 +57,14 @@
 
 .zmiti-news {
   background: rgba(255, 255, 255, 0.8);
-  width: 660px;
+  width: 600px;
   padding: 20px;
   border-radius: 20px;
   margin: 100px auto; }
   .zmiti-news.news-enter-active, .zmiti-news.news-leave-active {
     -webkit-transition: 0.4s;
     transition: 0.4s; }
-  .zmiti-news.news-leave-to, .zmiti-news.news-enter {
+  .zmiti-news.news-enter {
     opacity: 0;
     -webkit-transform: scale(0.1) translateY(-200px);
     transform: scale(0.1) translateY(-200px); }

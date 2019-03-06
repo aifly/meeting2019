@@ -11,12 +11,12 @@
 
     }
    .zmiti-loading-ui{
-        width: 700px;
+        width: 420px;
         height: 300px;
         @include pos(a);
         left: 50%;
         top: 50%;
-        margin: 0px 0 0 -350px;
+        margin: 0px 0 0 -210px;
 
         &.loading-enter-active,
         &.loading-leave-active {
@@ -51,14 +51,13 @@
         }
 
 
-        &.news-leave-to,
         &.news-enter {
             opacity: 0;
             @include transform(scale(.1) translateY(-200px));;
         }
 
         background:rgba(255,255,255,.8);
-        width: 660px;
+        width: 600px;
         padding:20px;
         @include br(20px);
 

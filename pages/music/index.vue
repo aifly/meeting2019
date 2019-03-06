@@ -44,7 +44,7 @@
 				this.audios.forEach((audio1,i)=>{
 					if(i>0){
 						if(audio1.autoplay){
-							audio1.muted = true;//静音
+							this.$refs['music'][i].muted = true;//静音
 							this.$refs['music'][i].play();
 						}
 					}
@@ -57,17 +57,29 @@
 			var audio = this.$refs['music'][0];
 
 			var len = audio;
+			if(audio){
+				
+				audio.addEventListener('play',()=>{
+					this.rotate = true;
+				})
+				audio.addEventListener('pause',()=>{
+					this.rotate = false;
+				})
+			}
+
 			
 
-			len && audio.play();
-			//audio.volume = .1;
+			/*len && audio.play();
+			audio.volume = .1;*/
 
 			this.playAudioMuted();
 
 			obserable.on('playVoice',(key)=>{
+
 				this.audios.forEach((audio,i)=>{
 					if(i>0 ){
 						if(audio.name === key){
+
 							this.$refs['music'][i].currentTime = 0;
 							this.$refs['music'][i].muted = false;//取消静音
 							this.$refs['music'][i].play();

@@ -4,16 +4,16 @@
 			<div class="zmiti-time">
 				<img :src="imgs.time" alt="">
 			</div>
-			<div class='zmiti-loading-ui' v-if='!loaded'>
+			<div class='zmiti-loading-ui' v-if='!loaded && showLoading'>
 				<div class='zmiti-loading-C'>
 					<div class='zmiti-loading-bar '  :style="{webkitTransform:'scale('+(width)+',1)'}">  </div>
 				</div>
 				<div class='zmiti-progress'>
-					{{width*100}}%
+					{{parseInt(width*100)}}%
 				</div>
 			</div>
 			<transition name='news'>
-				<div v-if='loaded' class='zmiti-news' v-tap='[entryIndex]'>
+				<div v-if='loaded' class='zmiti-news ' :class='className' v-tap='[entryIndex]'>
 					<div class='zmiti-news-title'>
 						<div>
 							<img :src="imgs.logo" alt="">
@@ -24,7 +24,7 @@
 						</div>
 					</div>
 					<div class="zmiti-news-content zmiti-text-overflow">
-						新华社送你一架“飞机”，进入页面点赞入页面点赞入页面点赞
+						新华社送你一架“飞机”，进入页面点赞
 					</div>
 				</div>
 			</transition>
@@ -44,10 +44,13 @@
 		data(){
 			return{
 				imgs:window.imgs,
+				className:"",
 				viewW:Math.min(window.innerWidth,750),
 				viewH:window.innerHeight,
 				show:true,
 				loaded:false,
+
+				showLoading:true,
 			}
 		},
 		components:{
@@ -59,6 +62,8 @@
 				e.preventDefault(); 
 			},
 			entryIndex(){
+				clearInterval(this.timer);
+
 				this.show = false;
 				this.obserable.trigger({
 					type:'showIndexTitle'
@@ -69,10 +74,17 @@
 
 			this.obserable.on('hideloading',()=>{
 				this.loaded = true;
+				this.showLoading = false;
+
+
 				this.obserable.trigger({
 					type:"playVoice",
 					data:'alert'
 				})
+
+				setTimeout(()=>{
+					this.className = 'flash'
+				},700)
 			});
 
 

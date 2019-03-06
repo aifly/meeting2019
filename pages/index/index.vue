@@ -8,7 +8,7 @@
 			</div>
 		</transition>
 		 
-		 <div class='zmiti-entry-main flash' :class="{'active':showTitle}">
+		 <div v-tap='[entryMain]' class='zmiti-entry-main flash' :class="{'active':showTitle}">
 		 	<img :src="imgs.entry" alt="">
 		 </div>
 	</div>
@@ -40,29 +40,14 @@
 		
 		methods:{
 			
-
-		 	 
-			entryRemark(){
-				this.hiddenLogo = true;
-				this.scaleTiele = true;
-				setTimeout(()=>{
-					///this.showRemarkPage = true;
-					setTimeout(()=>{
-						this.showRemark = true;
-					},10)
-
-					this.obserable.trigger({
-						type:'toggleMain',
-						data:{
-							show:true
-						}
-					});
-				},400)
+			entryMain(){
+				this.obserable.trigger({
+					type:'toggleMain',
+					data:{
+						show:true
+					}
+				});
 			},
-		  
-		 
-
-			 
 			updatePv(){
 				var s = this;
 				axios.post(s.host + '/xhs-security-activity/activity/num/updateNum', {

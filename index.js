@@ -67,6 +67,7 @@ new Vue({
 			var len = arr.length;
 			var count = 0;
 			var i = 0;
+			arr.loaded = false;
 
 			function loadimg() {
 				if (i === len) {
@@ -80,7 +81,10 @@ new Vue({
 						loadimg();
 						fn && fn(i / (len - 1), img.src);
 					} else {
-						fnEnd && fnEnd(img.src);
+						if(!arr.loaded){
+							arr.loaded = true;
+							fnEnd && fnEnd(img.src);
+						}
 					}
 				};
 				img.src = arr[i];
@@ -130,11 +134,7 @@ new Vue({
 			obserable.trigger({
 				type:'hideloading'
 			});
-			setTimeout(() => {
-				obserable.trigger({
-					//type: 'initIndex'
-				})
-			}, 1000);
+			
 			s.show = true;
 			s.loaded = true;
 			

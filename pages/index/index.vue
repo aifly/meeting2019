@@ -1,16 +1,18 @@
 <template>
 	
-	<div  class="lt-full zmiti-index-main-ui " :style="{background:'url('+imgs.index+') no-repeat center bottom',backgroundSize:'cover'}">
+	<div  class="lt-full zmiti-index-main-ui " :style="{background:'url('+imgs.main+') no-repeat center bottom',backgroundSize:'cover'}">
+		<div class="zmiti-zipcode">
+	 		<img :src="imgs.zipcode" alt="">
+	 	</div>
 		<transition name='title'>
-			
 			<div v-if='showTitle' class='zmiti-index-title' >
 				<img :src="imgs.title" alt="">
+				 <div v-tap='[entryMain]' class='zmiti-entry-main flash' :class="{'active':showTitle}">
+				 	<img :src="imgs.begin" alt="">
+				 </div>
 			</div>
 		</transition>
 		 
-		 <div v-tap='[entryMain]' class='zmiti-entry-main flash' :class="{'active':showTitle}">
-		 	<img :src="imgs.entry" alt="">
-		 </div>
 	</div>
 
 </template>

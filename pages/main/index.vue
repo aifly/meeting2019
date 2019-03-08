@@ -70,11 +70,24 @@
 						 	 <div class="zmiti-mobile">
 						 	 	<div class="zmiti-input-tip">输入您的电话，方便大礼到家！</div>
 						 	 	<input @blur='blur1'  @focus='focus' type="text" v-model='mobile' ref='mobile'>
-
-						 	 	<div class="zmiti-submit-btn" v-tap='[submit]' :class="{'active':nextPress}" @touchstart='nextPress = true' @touchend='nextPress = false'> 
+								<div class="zmiti-mobile-tip">
+									<div style="text-indent:0">说明：</div>
+									<div>诚邀您留下手机号码。</div>
+									<div>2019年3月16日，我们将从得到三颗星的选手中抽取10名参与者，每人获得C919大飞机模型一台。</div>
+									<div>
+										另从得到三颗星的选手中抽取70名参与者，每人获得两会纪念封一枚。
+									</div>
+									<div>
+										本次活动为随机抽取，两种奖品只能获得一个。
+									</div>
+								</div>
+						 	 	<div class="zmiti-submit-btn" v-tap='[submit]' :class="{'active':nextPress,'disabled':isSubmit}" @touchstart='nextPress = true' @touchend='nextPress = false'> 
 						 	 		提交
 						 	 	</div>
-						 	 	<div class="zmiti-pass" v-tap='[pass]'>跳过</div>
+						 	 	<div class="zmiti-result-btns">
+									<div :class="{'active':sharePress,'flash':isSubmit}" @touchstart='sharePress = true' @touchend='sharePress = false' v-tap='[showRemarkPage]'><img :src="imgs.share" alt=""></div>
+									<div :class="{'active':restartPress}" @touchstart='restartPress = true' @touchend='restartPress = false' v-tap='[init]'><img :src="imgs.restart" alt=""></div>
+								</div>
 						 	 </div>
 						</template>
 				 	 </transition>
@@ -83,7 +96,7 @@
 						<div v-if='showResultPage' class="lt-full zmiti-result-page">
 							<div class="zmiti-result-bg">
 								<img :src="imgs.result" alt="">
-								<div class="zmiti-passed">
+								<div class="zmiti-passed" v-if='rightCount>1'>
 									<img :src="imgs.passed" alt="">
 								</div>
 
@@ -103,10 +116,9 @@
 										{{result[level].content}}
 									</div>
 								</div>
-							</div>
-							<div class="zmiti-result-btns">
-								<div :class="{'active':sharePress}" @touchstart='sharePress = true' @touchend='sharePress = false' v-tap='[showRemarkPage]'><img :src="imgs.share" alt=""></div>
-								<div :class="{'active':restartPress}" @touchstart='restartPress = true' @touchend='restartPress = false' v-tap='[init]'><img :src="imgs.restart" alt=""></div>
+								<div class="zmiti-get flash" v-tap='[gotoSubmitPage]'>
+									<img :src="imgs.get" alt="">
+								</div>
 							</div>
 						</div>
 					</transition>
@@ -139,7 +151,7 @@
 		data() {
 			return {
 				errorMsg:'',
-				showResultPage:false,
+				showResultPage:true,
 				successMsg:'',
 				rightRadio:0,
 				restartPress:false,
@@ -172,7 +184,7 @@
 				mobile:'',
 				showRemark:false,
 				rightCount:0,
-				isSubmit:true,
+				isSubmit:false,
 				questionList:window.config.questionList,
 				lastChooseIndex:-1,
 				nextQuestionIndex:-1,
@@ -195,9 +207,10 @@
 				this.rightCount = 0;
 				this.rightRadio = 0;
 				this.currentIndex = 0;
-				this.showResultPage = false;
+				this.showResultPage = true;
 				this.lastChooseIndex = -1;
 				this.nextQuestionIndex = -1;
+				this.isSubmit = false;
 
 				this.swipeLeft();
 				this.swipeRight();
@@ -403,13 +416,19 @@
 			},
 
 			pass(){
-				this.showResultPage = true;
+				this.showResultPage = false;
 			},
 
-			
+			gotoSubmitPage(){
+				this.showResultPage = false;
+			},
 
 			submit(){
 				var  s = this;
+
+				if(this.isSubmit){
+					return;
+				}
 
 				if(this.isAndroid){
 					this.$refs['mobile'].blur();
@@ -432,7 +451,7 @@
 					unickName:s.nickname||"新华社网友",
 					uphone:s.mobile,
 					zipCode:'100031',
-					correctRatio:(s.rightCount / (s.questionList.length - 1)*100)+'%'
+					correctRatio:parseInt(s.rightCount / (s.questionList.length - 1)*100)+'%'
 
 				}).then((data)=>{
 					
@@ -452,8 +471,9 @@
 					}else{
 						///s.errorMsg =  data.msg;
 					}
+					s.isSubmit = true;
 					setTimeout(() => {
-						s.showResultPage = true;
+						
 						s.successMsg = '';
 						s.errorMsg = '';
 						s.showPrize = false;

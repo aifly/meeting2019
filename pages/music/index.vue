@@ -112,7 +112,7 @@
 			document.addEventListener("WeixinJSBridgeReady", function() {
 				WeixinJSBridge.invoke('getNetworkType', {}, function(e) {
 					//audio&&(audio.volume = .1);
-					len && audio.play();
+					//len && audio.play();
 					s.playAudioMuted();
 				});
 			}, false)
@@ -120,6 +120,7 @@
 
 
 			var play = function() {
+				return;
 				document.removeEventListener("WeixinJSBridgeReady", play);
 				document.removeEventListener("YixinJSBridgeReady", play);
 				s.playAudioMuted();
@@ -130,7 +131,7 @@
 
 			if (window.WeixinJSBridge) {
 				//audio&&(audio.volume = .1);
-				len && audio.play();
+				//len && audio.play();
 				s.playAudioMuted();
 			}
 			//weixin
@@ -140,7 +141,7 @@
 			} else {
 				//yixin
 				document.addEventListener('YixinJSBridgeReady', play, false);
-				len && audio.play();
+				//len && audio.play();
 				s.playAudioMuted();
 			}
 

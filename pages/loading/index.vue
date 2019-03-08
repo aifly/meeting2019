@@ -63,7 +63,10 @@
 			},
 			entryIndex(){
 				clearInterval(this.timer);
-
+				this.obserable.trigger({
+					type:'toggleBgMusic',
+					data:true
+				});
 				this.show = false;
 				this.obserable.trigger({
 					type:'showIndexTitle'

@@ -30,10 +30,10 @@ $bgColor: #f23426;
 
     .zmiti-entry-main{
         @include pos(a);
-        width: 130px;
-        bottom:100px;
+        width: 230px;
+        bottom:-40px;
         left: 50%;
-        margin-left: -65px;
+        margin-left: -115px;
         opacity:0;
         &.active{
             opacity:1;
@@ -44,7 +44,7 @@ $bgColor: #f23426;
     
     .zmiti-index-title{
         @include  pos(a);
-        $size:460px;
+        $size:680px;
         width: $size;
 
 
@@ -62,7 +62,8 @@ $bgColor: #f23426;
 
         left: 50%;
         margin-left: -$size/2;
-        top:15%;
+        top:20%;
+
         z-index: 199;
         &.active{
             @include transition(.5s);

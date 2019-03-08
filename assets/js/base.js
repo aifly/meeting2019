@@ -1,24 +1,27 @@
 ﻿﻿window.imgs = {
-  logo: "./assets/images/logo.png",
+  logo: "./assets/images/logo1.png",
   point: "./assets/images/point.png",
   play: "./assets/images/play.png",
   arrow: "./assets/images/arrow.png",
   play1:'./assets/images/play1.png',
-  time:'./assets/images/time.png',
-  title:'./assets/images/title.png',
+  get:'./assets/images/get.png',
+  time:'./assets/images/time2.png',
+  title:'./assets/images/title3.png',
   right:'./assets/images/right.png',
   error:'./assets/images/error.png',
   share:'./assets/images/share.png',
+  begin:'./assets/images/begin.png',
   passed:'./assets/images/passed.png',
   result:'./assets/images/result1.png',
   star:'./assets/images/star.png',
   restart:'./assets/images/restart.png',
   waiting:'./assets/images/waiting.png',
-  entry:'./assets/images/entry.png',
+  //entry:'./assets/images/entry.png',
   zipcode:'./assets/images/zipcode.png',
   index:'./assets/images/index.jpg',
-  loading:'./assets/images/loading.jpg',
+  loading:'./assets/images/loading1.jpg',
   main:'./assets/images/main-bg.jpg',
+
   
   wangjiaqi:'./assets/images/wangjiaqi.jpg',
   hejianhua:'./assets/images/hejianhua.jpg',
@@ -51,11 +54,11 @@ for (var attr in imgs) {
    indexvideo: './assets/video/index3.mp4',
    indexvideo1: './assets/video/index3.mp4',
    baseUrl: "https://testxlive.xinhuaapp.com",
-   host:"https://testxlive.xinhuaapp.com", //正式域名：https://testxlive.xinhuaapp.com
+   host:"https://xlive.xinhuaapp.com", //正式域名：https://testxlive.xinhuaapp.com
    secretKey: "e9469538b0623783f38c585821459454",
    questionList:[
       {
-        name:"新媒体中心 ",
+        name:"新华社客户端",
         position:'国家通讯社实时发布、国内外重大新闻平台',
         img:imgs.xinmeiti,
         headimgurl:imgs.logo,
@@ -70,7 +73,7 @@ for (var attr in imgs) {
       },
       {
         name:"何建华",
-        position:'全国政协委员、中科院上海高等研究院研究员、国家重大科技基础设施、上海光源二期工程总工程师',
+        position:'全国政协委员、“上海光源”二期总工程师',
         img:imgs._hejianhua,
         headimgurl:imgs.hejianhua,
         qTitle:"照亮原子分子的世界，需要用什么光？",
@@ -80,7 +83,7 @@ for (var attr in imgs) {
       },
       {
         name:"王建宇",
-        position:'全国人大代表、“墨子号”量子科学实验卫星、工程常务副总设计师、中科院上海分院院长',
+        position:'全国人大代表、“墨子号”量子科学实验卫星总指挥、中国科学院院士',
         img:imgs._wangjianyu ,
         headimgurl:imgs.wangjianyu ,
         qTitle:"在地球上看月球背面，多久能看到一次？",
@@ -117,7 +120,7 @@ for (var attr in imgs) {
         remark:'“雪龙2”号是我国首艘自主建造的极地科学考察破冰船，已于2018年下水。'
       },{
         name:"王家骐",
-        position:'全国人大代表、中国科学院院士、中科院长春光机所研究员',
+        position:'全国人大代表、中科院长春光机所研究员、中国科学院院士',
         img:imgs._wangjiaqi,
         headimgurl:imgs.wangjiaqi,
         qTitle:"高分六号卫星可实现大幅宽观测，一次拍下的图片最大宽度能超过多少公里？",
@@ -126,7 +129,7 @@ for (var attr in imgs) {
         remark:'高分六号卫星一次可观测地面最大宽度超过800公里。'
       },{
         name:"罗俊",
-        position:'全国人大代表、中国科学院院士、“天琴”空间引力波探测计划首席科学家、中山大学校长',
+        position:'全国人大代表、“天琴计划”首席科学家、中国科学院院士',
         img:imgs._luojun,
         headimgurl:imgs.luojun,
         qTitle:"如果万有引力常数G突然变小，地球会？",
@@ -141,7 +144,7 @@ for (var attr in imgs) {
 var musics = {
 	music: {
 		src: './assets/music/bg2.mp3',
-		autoplay: true,
+		autoplay: false,
 		name: 'bg2',
 		loop: true
 	},

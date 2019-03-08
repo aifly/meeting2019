@@ -5,9 +5,10 @@
     }
     
     .zmiti-time{
-        @include pos(r);
-        width: 400px;
-        margin: 200px auto 0;
+        @include pos(a);
+        width: 680px;
+        bottom:160px;
+        left: 35px;
 
     }
    .zmiti-loading-ui{
@@ -61,7 +62,10 @@
         padding:20px;
         @include br(20px);
 
-        margin: 100px auto;
+        @include pos(a);
+        top: 40%;
+        left: 55px;;
+
         .zmiti-news-title{
             @include displayBox(horizontal);
             -webkit-box-pack: justify;

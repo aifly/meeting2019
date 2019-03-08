@@ -70,7 +70,7 @@ $color: #fffb88;
         } */
     }
 
-    .zmiti-zipcode{
+    @at-root.zmiti-zipcode{
         @include pos(a);
         width: 300px;
         left: 30px;
@@ -80,18 +80,23 @@ $color: #fffb88;
     
     .zmiti-mobile{
 
+
+
         &.result-enter-active,
         &.result-leave-active {
             @include transition(.4s);
         }
         
-        &.result-leave-to{
+        &.result-enter{
+
             opacity: 0;
-            @include transform(translate3d(-50%,-80vh,0));
+            @include transform(translate3d(-50%,80vh,0));
         }
 
+       
+
         @include pos(a);
-        top:40%;
+        top:24%;
         width: 580px;
         left: 50%;
         @include transform(translate3d(-50%,0,0));
@@ -100,6 +105,15 @@ $color: #fffb88;
         .zmiti-input-tip{
             font-size:40px;
             margin-bottom: 10px;
+        }
+
+        .zmiti-mobile-tip{
+            margin-top: 20px;
+            font-weight: normal;
+            line-height: 42px;
+            div{
+                text-indent: 2em;
+            }
         }
         input{
             width: 580px;
@@ -126,6 +140,11 @@ $color: #fffb88;
             @include br(20px);
             border:1px solid #b32525;
             margin: 40px auto;
+            &.disabled{
+                background:#f7f7f7;
+                border:2px solid #dcdee2;
+                color:#c5c8ce;
+            }
             &.active{
                 @include transform(scale(.92) translate3d(0,10px,0));;
             }
@@ -137,15 +156,14 @@ $color: #fffb88;
         @include displayBox(horizontal);
         @include pos(r);
 
-        &.result-enter-active,
+         &.result-enter-active,
         &.result-leave-active {
             @include transition(.4s);
         }
         
-        &.result-enter{
-
+        &.result-leave-to{
             opacity: 0;
-            @include transform(translate3d(0,80vh,0));
+            @include transform(translate3d(0,-80vh,0));
         }
 
 
@@ -153,6 +171,7 @@ $color: #fffb88;
             @include pos(r);
             width: 590px;
             height: 700px;
+            margin: 0 auto;
             .lt-full{
                 color:#fff;
                 height: 590px;
@@ -214,7 +233,10 @@ $color: #fffb88;
                 @include pos(a);
             }
         }
-
+        .zmiti-get{
+            @include pos(a);
+            bottom: -100px;
+        }
         .zmiti-passed{
             @include pos(a);
             width: 300px;
@@ -222,11 +244,11 @@ $color: #fffb88;
             right: -90px;
             z-index: 0;
         }
-        .zmiti-result-btns{
+        @at-root.zmiti-result-btns{
             @include pos(a);
             @include displayBox(horizontal);
-            bottom:60px;
-            right:100px;
+            bottom:-180px;
+            right:30px;
             div{
                 width: 100px;
                 margin: 0 20px;
@@ -393,7 +415,7 @@ $color: #fffb88;
                                 font-size:32px;
                                 @include pos(r);
                                 &.active{
-                                    @include transform(scale(.92) translate3d(0,4px,0));;
+                                    @include transform(scale(.95) translate3d(0,4px,0));;
                                 }
                                 &:before{
                                     content:"";
@@ -442,11 +464,12 @@ $color: #fffb88;
                                 margin: 20px auto;
                                 text-align: left;
                                 text-indent: 2em;
+                                font-size:34px;
                             }
 
                             .zmiti-next-btn{
                                 @include pos(a);
-                                bottom:100px;
+                                bottom:70px;
                                 width: 250px;
                                 background:#fff;
                                 color:#c32121;
@@ -550,6 +573,21 @@ $color: #fffb88;
         width: 350px  !important;
         margin: 10px auto !important;
     }
+    .zmiti-result-btns{
+        bottom:-100px;
+    }
+     .zmiti-right-remark{
+        h2{
+            text-align: left;
+        }
+        div{
+            width: 680px;
+            margin: 20px auto;
+            text-align: left;
+            text-indent: 2em;
+            font-size:34px;
+        }
+        }
 }
  
 

@@ -5,7 +5,7 @@
   arrow: "./assets/images/arrow.png",
   play1:'./assets/images/play1.png',
   get:'./assets/images/get.png',
-  time:'./assets/images/time2.png',
+  time:'./assets/images/time3.png',
   title:'./assets/images/title3.png',
   right:'./assets/images/right.png',
   error:'./assets/images/error.png',

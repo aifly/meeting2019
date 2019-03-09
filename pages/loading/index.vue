@@ -24,7 +24,7 @@
 						</div>
 					</div>
 					<div class="zmiti-news-content zmiti-text-overflow">
-						新华社送你一架“飞机”，进入页面点赞
+						新华社送你一架“飞机”，进入页面挑战
 					</div>
 				</div>
 			</transition>

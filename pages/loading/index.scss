@@ -11,6 +11,41 @@
         left: 35px;
 
     }
+
+    .zmiti-loadig-time{
+        color:#fff;
+        @include pos(a);
+        top: -30px;
+        border-bottom:1px solid #fff;
+        padding-bottom:10px;
+        span{
+            
+
+            @include pos(r);
+            &:before,&:after{
+                content:"";
+                @include pos(a);
+                width: 16px;
+                height: 16px;
+                @include br();
+                background:#fff;
+                left: 50%;
+                margin-left: -8px;
+                top: 50px;;
+            }
+            &:after{
+                top: 100px;
+            }
+        }
+        &>div{
+            &:nth-of-type(1){
+                font-size:130px;
+            }
+            &:nth-of-type(2){
+                font-size:36px;
+            }
+        }
+    }
    .zmiti-loading-ui{
         width: 420px;
         height: 300px;
@@ -79,10 +114,10 @@
 
     .zmiti-logo{
         @include pos(a);
-        width: 100px;
+        width: 500px;
         bottom:40px;
         left: 50%;
-        margin-left: -50px;
+        margin-left: -250px;
     }
 
     .zmiti-loading-C{

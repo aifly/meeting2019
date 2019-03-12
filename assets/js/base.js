@@ -1,11 +1,12 @@
 ﻿﻿window.imgs = {
   logo: "./assets/images/logo1.png",
+  logo2: "./assets/images/logo2.png",
   point: "./assets/images/point.png",
   play: "./assets/images/play.png",
   arrow: "./assets/images/arrow.png",
   play1:'./assets/images/play1.png',
   get:'./assets/images/get.png',
-  time:'./assets/images/time3.png',
+  time:'./assets/images/time5.png',
   title:'./assets/images/title3.png',
   right:'./assets/images/right.png',
   error:'./assets/images/error.png',
@@ -15,6 +16,7 @@
   result:'./assets/images/result1.png',
   star:'./assets/images/star.png',
   restart:'./assets/images/restart.png',
+  teamBtn:'./assets/images/team-btn.png',
   waiting:'./assets/images/waiting.png',
   //entry:'./assets/images/entry.png',
   zipcode:'./assets/images/zipcode.png',
@@ -22,6 +24,7 @@
   loading:'./assets/images/loading1.jpg',
   main:'./assets/images/main-bg.jpg',
 
+  team:'./assets/images/team1.jpg',
   
   wangjiaqi:'./assets/images/wangjiaqi.jpg',
   hejianhua:'./assets/images/hejianhua.jpg',

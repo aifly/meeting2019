@@ -85,6 +85,7 @@
 						 	 		提交
 						 	 	</div>
 						 	 	<div class="zmiti-result-btns">
+						 	 		<div :class="{'active':teamPress}" @touchstart='teamPress = true' @touchend='teamPress = false' v-tap='[showTeamPage]'><img :src="imgs.teamBtn" alt=""></div>
 									<div :class="{'active':sharePress,'flash':isSubmit}" @touchstart='sharePress = true' @touchend='sharePress = false' v-tap='[showRemarkPage]'><img :src="imgs.share" alt=""></div>
 									<div :class="{'active':restartPress}" @touchstart='restartPress = true' @touchend='restartPress = false' v-tap='[init]'><img :src="imgs.restart" alt=""></div>
 								</div>
@@ -130,6 +131,12 @@
 			 	<img :src="imgs.arrow" alt="">
 			 </div>
 
+			 <div class="zmiti-team-page lt-full" v-tap='[closeTeamPage]' v-if='showTeam'>
+			 	 <div>
+			 	 	<img :src="imgs.team" alt="">
+			 	 </div>
+			 </div>
+
 			<Toast :errorMsg='errorMsg' :msg='successMsg'></Toast>
 		</div>
 
@@ -152,6 +159,7 @@
 			return {
 				errorMsg:'',
 				showResultPage:true,
+				teamPress:false,
 				successMsg:'',
 				rightRadio:0,
 				restartPress:false,
@@ -167,7 +175,7 @@
 					content:"给你45度角明媚的疼痛忧伤"
 				},{
 					level:'“硬核”科迷',
-					content:"给你C位，下一步科幻电影邀你来做编剧！"
+					content:"给你C位，下一部科幻电影邀你来做编剧！"
 				}],
 				isAndroid :navigator.userAgent.indexOf('Android') > -1 || navigator.userAgent.indexOf('Adr') > -1,
 				createImg:'',
@@ -188,6 +196,7 @@
 				questionList:window.config.questionList,
 				lastChooseIndex:-1,
 				nextQuestionIndex:-1,
+				showTeam:false,
 			}
 		},
 	
@@ -198,6 +207,15 @@
 
 		},
 		methods: {
+
+
+			closeTeamPage(){
+				this.showTeam = false;
+			},
+
+			showTeamPage(){
+				this.showTeam = true;
+			},
 
 			showRemarkPage(){
 				this.showRemark = true;

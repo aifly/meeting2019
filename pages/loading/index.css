@@ -37,6 +37,31 @@
   bottom: 160px;
   left: 35px; }
 
+.zmiti-loadig-time {
+  color: #fff;
+  position: absolute;
+  top: -30px;
+  border-bottom: 1px solid #fff;
+  padding-bottom: 10px; }
+  .zmiti-loadig-time span {
+    position: relative; }
+    .zmiti-loadig-time span:before, .zmiti-loadig-time span:after {
+      content: "";
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #fff;
+      left: 50%;
+      margin-left: -8px;
+      top: 50px; }
+    .zmiti-loadig-time span:after {
+      top: 100px; }
+  .zmiti-loadig-time > div:nth-of-type(1) {
+    font-size: 130px; }
+  .zmiti-loadig-time > div:nth-of-type(2) {
+    font-size: 36px; }
+
 .zmiti-loading-ui {
   width: 420px;
   height: 300px;
@@ -85,10 +110,10 @@
 
 .zmiti-logo {
   position: absolute;
-  width: 100px;
+  width: 500px;
   bottom: 40px;
   left: 50%;
-  margin-left: -50px; }
+  margin-left: -250px; }
 
 .zmiti-loading-C {
   padding: 2px;

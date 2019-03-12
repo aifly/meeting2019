@@ -27,6 +27,16 @@ $color: #fffb88;
     overflow: hidden;
     background: #fff;
 
+
+    .zmiti-team-page{
+        @include displayBox(horizontal);
+
+        z-index: 102;
+        div{
+            @include transform(scale(.9));
+        }
+    }
+
     @at-root.zmiti-h5-title{
         @include pos(a);
         width: 156px;

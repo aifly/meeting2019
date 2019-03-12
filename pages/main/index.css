@@ -49,6 +49,15 @@
     transition: 0.4s; }
   .zmiti-main-ui.main-leave-to, .zmiti-main-ui.main-enter {
     opacity: 0; }
+  .zmiti-main-ui .zmiti-team-page {
+    display: -webkit-box;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    -webkit-box-orient: horizontal;
+    z-index: 102; }
+    .zmiti-main-ui .zmiti-team-page div {
+      -webkit-transform: scale(0.9);
+      transform: scale(0.9); }
   .zmiti-h5-title {
     position: absolute;
     width: 156px;
